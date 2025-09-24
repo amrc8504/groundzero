@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ground Zero | Auto Window Tinting{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero text-white d-flex align-items-center">
+  <div class="hero__media" role="img" aria-label="Shiny sedan with fresh window tint"></div>
+  <div class="container hero__content py-5">
+    <p class="text-uppercase fw-bold mb-1 small" id="hero-head">Pro Auto Window Tinting</p>
+    <h1 class="display-5 fw-bold lh-sm">Cooler Cabin. Cleaner Look.<br>Professional Tint You Can Trust.</h1>
+    <p class="lead mb-4">Reduce heat & glare and block up to 99% UV in one appointment.</p>
+
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <a class="btn btn-primary btn-lg" href="#quote">Get a Quote</a>
+      <a class="btn btn-outline-light btn-lg" href="#gallery">See Our Work</a>
+    </div>
+
+    <div class="d-flex flex-wrap gap-2">
+      <span class="badge bg-light text-dark">Lifetime film warranty</span>
+      <span class="badge bg-light text-dark">Same-day service available</span>
+      <span class="badge bg-light text-dark">Sedans • SUVs • Trucks</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+ <section class="py-3 bg-dark-subtle">
+  <div class="container d-flex flex-wrap gap-4 justify-content-center align-items-center opacity-75">
+    <span class="small text-uppercase">Trusted Films:</span>
+    <img src="{% static 'images/xpel.png' %}" height="28" alt="Brand 1" loading="lazy">
+    <img src="{% static 'images/3M.png' %}" height="28" alt="Brand 2" loading="lazy">
+    <span class="vr d-none d-md-inline"></span>
+    <span class="badge rounded-pill text-bg-success">Lifetime Warranty</span>
+    <span class="badge rounded-pill text-bg-info">UV Protection</span>
+    <span class="badge rounded-pill text-bg-warning text-dark">Heat Reduction</span>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Our Services</h2>
+      <p class="text-muted">Quality films and expert installs.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="text-primary mb-2"><i class="bi bi-car-front-fill fs-3" style="color: orangered;"></i></div>
+            <h5 class="card-title">Full Vehicle Tint</h5>
+            <p class="card-text">Front, rear and back glass with shade options to match your style.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="text-primary mb-2"><i class="bi bi-sun fs-3" style="color: orangered;"></i></div>
+            <h5 class="card-title">Front Windows Only</h5>
+            <p class="card-text">Match factory rear tint or choose your preferred shade legally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <div class="text-primary mb-2"><i class="bi bi-shield-check fs-3" style="color: orangered;"></i></div>
+            <h5 class="card-title">Ceramic Films</h5>
+            <p class="card-text">Top heat rejection & UV protection without going too dark.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+ <section class="py-5" style="background-color: white;">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">How It Works</h2>
+      <p class="text-muted">Simple, fast, professional.</p>
+    </div>
+
+    <div class="row g-4 text-center">
+      <div class="col-6 col-lg-3">
+        <div class="p-3 border rounded-4 h-100">
+          <div class="display-6 mb-2">1</div>
+          <h6 class="fw-bold">Request Quote</h6>
+          <p class="small text-muted mb-0">Tell us your vehicle + shade.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="p-3 border rounded-4 h-100">
+          <div class="display-6 mb-2">2</div>
+          <h6 class="fw-bold">Schedule</h6>
+          <p class="small text-muted mb-0">Pick a time that works.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="p-3 border rounded-4 h-100">
+          <div class="display-6 mb-2">3</div>
+          <h6 class="fw-bold">Install</h6>
+          <p class="small text-muted mb-0">Expert, clean, precise.</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="p-3 border rounded-4 h-100">
+          <div class="display-6 mb-2">4</div>
+          <h6 class="fw-bold">Drive</h6>
+          <p class="small text-muted mb-0">Enjoy a cooler, cleaner look.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+ <section class="py-5" id="packages">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Packages</h2>
+      <p class="text-muted">Choose the film that fits your goals and budget.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header text-bg-light fw-bold text-center">Standard</div>
+          <div class="card-body">
+            <h3 class="fw-bold">$— <small class="text-muted fs-6">/ vehicle</small></h3>
+            <ul class="list-unstyled small mt-3 mb-4">
+              <li>• Dyed film</li>
+              <li>• Glare reduction</li>
+              <li>• Limited warranty</li>
+            </ul>
+            <a href="#quote" class="btn btn-outline-primary w-100">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-danger shadow">
+          <div class="card-header text-bg-danger fw-bold text-center">Ceramic</div>
+          <div class="card-body">
+            <h3 class="fw-bold">$— <small class="text-muted fs-6">/ vehicle</small></h3>
+            <ul class="list-unstyled small mt-3 mb-4">
+              <li>• Ceramic film</li>
+              <li>• Strong heat rejection</li>
+              <li>• Lifetime warranty</li>
+            </ul>
+            <a href="#quote" class="btn btn-primary w-100">Most Popular</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header text-bg-dark fw-bold text-center">Ceramic+ IR</div>
+          <div class="card-body">
+            <h3 class="fw-bold">$— <small class="text-muted fs-6">/ vehicle</small></h3>
+            <ul class="list-unstyled small mt-3 mb-4">
+              <li>• Premium ceramic</li>
+              <li>• Maximum heat & UV performance</li>
+              <li>• Lifetime transferable warranty</li>
+            </ul>
+            <a href="#quote" class="btn btn-outline-dark w-100">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="small text-muted mt-3">* Actual performance varies by film brand/shade and local regulations. We’ll confirm details with you.</p>
+  </div>
+</section>
+
+
+<!-- QUOTE -->
+<section id="quote" class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-2">Request a Fast Quote</h3>
+        <p class="text-muted">Tell us your vehicle and preferred shade. We’ll get back quickly.</p>
+
+        <!-- placeholder form (we'll wire it in Django later) -->
+        <form action="#" method="post" class="row g-3">
+          {% csrf_token %}
+          <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Your name">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-control" placeholder="(555) 555-5555">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Vehicle</label>
+            <input type="text" class="form-control" placeholder="e.g., 2019 Honda Civic">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Preferred Shade</label>
+            <select class="form-select">
+              <option selected>Choose…</option>
+              <option>70% (light)</option>
+              <option>35% (medium)</option>
+              <option>20% (factory match)</option>
+              <option>5% (limo)</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Notes</label>
+            <textarea class="form-control" rows="3" placeholder="Anything we should know?"></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+            <a href="tel:+1-555-555-5555" class="btn btn-outline-secondary btn-lg ms-2">
+              <i class="bi bi-telephone"></i> Call Now
+            </a>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img class="img-fluid rounded shadow-sm" src="{% static 'images/tinted.jpg' %}" alt="Tinted car example">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+ <section class="py-5 bg-light" id="testimonials">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">What Drivers Say</h2>
+    </div>
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card shadow-sm mx-auto" style="max-width:640px">
+            <div class="card-body">
+              <p class="mb-1">“Looks factory and my cabin stays way cooler.”</p>
+              <div class="small text-muted">— Alex R.</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card shadow-sm mx-auto" style="max-width:640px">
+            <div class="card-body">
+              <p class="mb-1">“Same-day appointment, clean install, great price.”</p>
+              <div class="small text-muted">— Brianna S.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+ <section class="py-5" id="faq">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="accordion" id="faqAcc">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">
+            How long does a full tint take?
+          </button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+          <div class="accordion-body small">Most vehicles are finished the same day depending on complexity and film choice.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+            How do I care for new tint?
+          </button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body small">Avoid rolling windows down for a few days. Clean with ammonia-free glass cleaner and soft towels.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="q3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+            What shades are available?
+          </button>
+        </h2>
+        <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body small">Common choices: 70%, 35%, 20%, and 5%. We’ll recommend options that fit your look and local laws.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION & HOURS -->
+ <section class="py-5" id="contact">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-3">Visit Us</h2>
+        <address class="mb-2">
+          <strong>Ground Zero Tinting</strong><br>
+          3411 West 47th Court<br>
+          Gary, IN 46408<br>
+          <a style="margin-top: 5px;" href="tel:+1-555-555-5555" class="btn btn-primary">Call Now</a>
+        </address>
+        <div class="small text-muted">Mon–Fri 9–6 • Sat 9–2 • Sun Closed</div>
+      </div>
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.7298415811792!2d-87.38193372329467!3d41.53179227128188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8811e87fd986b6a9%3A0xf805f495da8a2a5f!2s3411%20W%2047th%20Ct%2C%20Gary%2C%20IN%2046408!5e0!3m2!1sen!2sus!4v1758732161805!5m2!1sen!2sus"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

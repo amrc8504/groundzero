@@ -1,0 +1,196 @@
+/* Brand tweaks */
+:root{
+  --bs-primary: #eb7425;
+  --bs-dark: #111;
+}
+
+/* 1) Make sure the body background doesn't cover the effect */
+html, body { height: 100%; }
+body { background: transparent; }  /* override any previous body bg */
+
+/* 2) Gradient that blooms from the center */
+:root{
+  --page-grad: linear-gradient(180deg, #ffb3b3 0%, #ff7a1a 50%, #ffe066 100%);
+}
+
+:root::before{
+  content: "";
+  position: fixed;        /* stays put while scrolling */
+  inset: 0;
+  background: var(--page-grad);
+  clip-path: circle(0% at 50% 50%);        /* start collapsed in the center */
+  animation: body-bloom 900ms cubic-bezier(.2,.8,.2,1) forwards;
+  z-index: -1;            /* behind all content */
+  pointer-events: none;
+}
+
+/* 3) Bloom animation */
+@keyframes body-bloom{
+  to { clip-path: circle(150% at 50% 50%); }  /* grow past viewport edges */
+}
+
+/* 4) Fallbacks / accessibility */
+@media (prefers-reduced-motion: reduce){
+  :root::before{ animation: none; clip-path: none; }
+}
+@supports not (clip-path: circle(50% at 50% 50%)){
+  :root::before{ clip-path: none; }   /* show static gradient if clip-path unsupported */
+}
+
+
+/* Hero */
+.hero{
+  position: relative;
+  min-height: 70vh;
+  background-color: #0f0f10; /* fallback behind the image */
+  color: #e7f0ff;
+}
+.hero__media{
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.35)),
+    url("/static/images/tinted.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+  z-index: 0;
+}
+.hero__content{ position: relative; z-index: 1; }
+@media (min-width: 992px){ .hero{ min-height: 78vh; } }
+
+/* Optional: card hover for desktop */
+@media (hover:hover){
+  .card{ transition: transform .15s ease, box-shadow .15s ease; }
+  .card:hover{ transform: translateY(-2px); box-shadow: 0 1rem 2rem rgba(0,0,0,.12); }
+}
+
+#nav-brand{
+    color: orange;
+}
+
+#hero-head {
+    color: orangered;
+}
+
+.btn-primary {
+    background-color: orange;
+    color: black;
+    border-color: #eb7425;
+}
+
+.btn-primary:hover {
+    background-color: orangered;
+    color: yellow;
+    border-color: black;
+}
+
+/* --- Nuclear blast effect for .btn-primary --- */
+.btn-primary{
+  position: relative;
+  overflow: hidden;              /* keep effects inside the button */
+  isolation: isolate;            /* separate stacking context */
+  will-change: transform;
+}
+
+/* Fireball */
+.btn-primary::before,
+.btn-primary::after{
+  content: "";
+  position: absolute;
+  left: var(--x,50%);            /* set from JS; defaults to center */
+  top:  var(--y,50%);
+  transform: translate(-50%, -50%) scale(0.01);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ::before = FIREBALL (bright core that expands & fades) */
+.btn-primary::before{
+  width: 18rem; height: 18rem;   /* logical size, scaled by animation */
+  background:
+    radial-gradient(circle,
+      #ffffff 0%,
+      #ffe066 10%,
+      #ffb703 22%,
+      #ff6a00 38%,
+      rgba(255,69,0,.25) 58%,
+      transparent 62%);
+  filter: blur(1px) saturate(1.2);
+  z-index: 0;
+}
+
+/* ::after = SHOCKWAVE RING */
+.btn-primary::after{
+  width: 22rem; height: 22rem;
+  background:
+    radial-gradient(circle,
+      transparent 56%,
+      rgba(255,255,255,.95) 58%,
+      rgba(255,200,0,.9) 60%,
+      rgba(255,69,0,.0) 63%);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+/* Triggered state */
+.btn-primary.boom{ animation: btn-rumble 300ms linear; }
+.btn-primary.boom::before{ animation: fireball 900ms cubic-bezier(.15,.75,.2,1) forwards; }
+.btn-primary.boom::after{  animation: shockwave 950ms cubic-bezier(.2,.8,.2,1) forwards; }
+
+/* Keyframes */
+@keyframes fireball{
+  0%   { opacity: 1; transform: translate(-50%,-50%) scale(0.05); }
+  15%  { opacity: 1; transform: translate(-50%,-50%) scale(0.35); }
+  45%  { opacity: .95; transform: translate(-50%,-50%) scale(1.4); }
+  75%  { opacity: .75; transform: translate(-50%,-50%) scale(3.4); filter: blur(2px) saturate(1.3); }
+  100% { opacity: 0;   transform: translate(-50%,-50%) scale(6.5); filter: blur(3px); }
+}
+
+@keyframes shockwave{
+  0%   { opacity: .95; transform: translate(-50%,-50%) scale(0.05); }
+  40%  { opacity: .85; transform: translate(-50%,-50%) scale(1.8); }
+  70%  { opacity: .55; transform: translate(-50%,-50%) scale(4.2); }
+  100% { opacity: 0;   transform: translate(-50%,-50%) scale(7.2); }
+}
+
+@keyframes btn-rumble{
+  0%,100% { transform: translate(0,0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1.5px,-1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px,-1.5px); }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .btn-primary.boom,
+  .btn-primary.boom::before,
+  .btn-primary.boom::after{ animation: none !important; }
+}
+
+#contact {
+  background-color: white;
+}
+
+/* the anchor is the container */
+#nav-brand{
+  display: inline-flex;        /* keeps it inline and aligns the logo */
+  align-items: center;
+  height: 100px;                /* your desired nav height */
+  overflow: hidden;            /* just in case */
+}
+
+/* the logo must fit the anchor */
+#nav-brand .brand-logo{
+  height: 100%;                /* scale to the anchor’s height */
+  width: auto;                 /* keep aspect ratio */
+  max-width: 100%;             /* don’t overflow horizontally */
+  display: block;              /* remove inline-img baseline gap */
+  object-fit: contain;         /* safe if you later give the <a> a width */
+}
+
+.mt-5 {
+  margin-top: 0 !important;
+}
